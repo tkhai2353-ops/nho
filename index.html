@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đình Khải On TikTok - Bio Link</title>
+    <style>
+        :root {
+            --pink-neon: #ff007f;
+            --pink-pastel: #fbcfe8;
+            --pink-dark: #4c0519;
+            --tiktok-cyan: #00f2fe;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #fce7f3 0%, #fbcfe8 100%);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Khung chứa Bio giống điện thoại */
+        .bio-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 30px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2);
+            border: 3px solid white;
+            z-index: 5;
+            box-sizing: border-box;
+        }
+
+        /* Ảnh đại diện viền lấp lánh như Idol TikTok */
+        .avatar-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--pink-neon), var(--tiktok-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            font-weight: bold;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+            box-sizing: border-box;
+        }
+
+        /* Huy hiệu tích xanh idol quyền lực */
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #2f80ed;
+            color: white;
+            font-size: 14px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--pink-dark);
+            margin: 10px 0 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .username {
+            font-size: 15px;
+            color: #65a30d;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Danh sách nút bấm liên kết chuẩn phong cách TikTok */
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .tiktok-btn {
+            background: white;
+            color: var(--pink-dark);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 16px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--pink-pastel);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        /* Hiệu ứng phóng to thu nhỏ và đổi viền màu neon khi di chuột vào */
+        .tiktok-btn:hover {
+            transform: scale(1.04);
+            border-color: var(--pink-neon);
+            background: var(--pink-neon);
+            color: white;
+            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.3);
+        }
+
+        /* NÚT BẤM ĐẶC BIỆT: Hiệu ứng giật giật (Tada) liên tục để gây chú ý cực mạnh */
+        .btn-hot {
+            animation: shakeIdol 1.5s infinite;
+            border: 2px solid var(--pink-neon);
+            background: linear-gradient(90deg, #fff0f6 0%, #fff 100%);
+        }
+        @keyframes shakeIdol {
+            0%, 100% { transform: scale(1); }
+            10%, 20% { transform: scale(0.9) rotate(-3deg); }
+            30%, 50%, 70% { transform: scale(1.1) rotate(3deg); }
+            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+        }
+
+        /* KHU VỰC HIỂN THỊ MÃ QR CODE */
+        .qr-section {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            border: 2px dashed var(--pink-neon);
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.1);
+            margin-top: 10px;
+        }
+        .qr-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--pink-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .qr-image-container {
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: #f8fafc;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .qr-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Biểu tượng rơi phía nền */
+        .sparkle {
+            position: absolute;
+            color: var(--pink-neon);
+            pointer-events: none;
+            opacity: 0.6;
+            animation: fallDown 3s linear infinite;
+        }
+        @keyframes fallDown {
+            0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Khung Bio -->
+    <div class="bio-card">
+        <div class="avatar-container">
+            <div class="avatar">DK</div>
+            <div class="verified-badge">✓</div>
+        </div>
+        
+        <h1>Đình Khải 👑</h1>
+        <div class="username">@dinhkhai.coder</div>
+
+        <!-- Các nút bấm mạng xã hội -->
+        <div class="link-group">
+            <a href="https://facebook.com" target="_blank" class="tiktok-btn btn-hot">
+                <span>🔥 Facebook Cá Nhân</span>
+                <span>➔</span>
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="tiktok-btn">
+                <span>🎵 Kênh TikTok Chính Thức</span>
+                <span>➔</span>
+            </a>
+        </div>
+
+        <!-- Khu vực hiển thị mã VietQR tài khoản ngân hàng MB của bạn -->
+        <div class="qr-section">
+            <div class="qr-title">💳 Quét Mã Ủng Hộ Khải (MB Bank)</div>
+            <div class="qr-image-container">
+                <!-- Đường link ảnh QR VietQR đã được nhúng tự động dựa trên số tài khoản của bạn -->
+                <img src="https://vietqr.io" alt="Mã QR MB Bank Trần Đình Khải">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tự động tạo ngôi sao rơi lung linh phong cách Idol
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            const icons = ['✨', '🌸', '💖', '⭐'];
+            sparkle.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.fontSize = Math.random() * 15 + 10 + 'px';
+            sparkle.style.animationDuration = Math.random() * 2 + 2 + 's';
+            document.body.appendChild(sparkle);
+            setTimeout(() => { sparkle.remove(); }, 3000);
+        }
+        setInterval(createSparkle, 300);
+    </script>
+</body>
+</html>
+
+
+
+
+
